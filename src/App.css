@@ -1,0 +1,29 @@
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.gpa{
+  color : grey;
+  width : 40vw;
+}
+
+.green-gpa{
+  background-color: green;
+}
+
+.yellow-gpa{
+  background-color: yellow;
+}
+
+.orange-gpa{
+  background-color: orange;
+}
+
+.red-gpa{
+  background-color: red;
+}
