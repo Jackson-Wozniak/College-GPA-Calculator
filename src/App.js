@@ -20,7 +20,7 @@ function App() {
   const [GPA, setGPA] = useState(0);
 
   function addNewCourse(){
-    let course = new Class(courses.length, '-', 0);
+    let course = new Class(courses.length, 0.0, 0);
     let courseList = [...courses];
     courseList.push(course);
     setCourses(courseList);
@@ -28,43 +28,30 @@ function App() {
 
   function updateCourseGrade(index, grade){
     let courseList = [...courses];
-    if(grade < 0 || grade > 4){
-      courseList[index].error = true;
-    }else{
-      courseList[index].error = false;
-      courseList[index].grade = grade;
-    }
+    courseList[index].grade = grade;
     setCourses(courseList);
   }
 
   function updateCourseCredits(index, credits){
     let courseList = [...courses];
-    if(credits === "" || credits === null || credits <= 0){
-      courseList[index].error = true;
-    }else{
-      courseList[index].error = false;
-      courseList[index].credits = credits;
-    }
+    courseList[index].credits = credits;
     setCourses(courseList);
   }
 
   function calculateGPA(e){
     e.preventDefault();
-    if(courses.length <= 0){
-      window.alert("There must be at least 1 class to calculate GPA");
-      return;
-    }
     let weightedGPASum = 0.0;
     let totalCredits = 0;
     for(let i = 0; i < courses.length; i++){
-      if(courses[i].error || courses.grade === '-'){
-        window.alert("All fields must be valid");
-        return;
-      }
-      weightedGPASum += (courses[i].grade * courses[i].credits);
-      totalCredits += courses[i].credits;
+      weightedGPASum += (parseInt(courses[i].grade) * parseInt(courses[i].credits));
+      totalCredits += parseInt(courses[i].credits);
     }
-    
+    //ensure not dividing by 0
+    if(totalCredits === 0){
+      setGPA(-1);
+      return;
+    }
+    console.log(weightedGPASum + "" + totalCredits);
     setGPA(weightedGPASum / totalCredits);
   }
 
@@ -74,7 +61,7 @@ function App() {
         <h3>{courses.length} Courses</h3>
         <input type="submit" value="+ Add Course" onClick={() => addNewCourse()}/>
       </div>
-      <form action="" onSubmit={(e) => calculateGPA(e)}>
+      <form className="form" onSubmit={(e) => calculateGPA(e)}>
       <div className="classes">
       {courses.map((course) => (
           <Course
@@ -87,7 +74,16 @@ function App() {
         ))}
       </div>
       <input type="submit" value="Calculate"/>
-      <h1 className={"gpa " + (GPA > 3.0 ? "green-gpa" : GPA > 2.3 ? "yellow-gpa" : GPA >= 2.0 ? "orange-gpa" : "red-gpa")}>{GPA.toFixed(2)}</h1>
+      <h1 
+        className={
+          "gpa " + (GPA > 3.0 ? 
+          "green-gpa" : GPA > 2.3 ? 
+          "yellow-gpa" : GPA >= 2.0 ? 
+          "orange-gpa" : 
+          "red-gpa")
+        }>
+            {(GPA >= 0.0 && GPA <= 4.0) ? GPA.toFixed(2) : '-1.00'}
+      </h1>
       </form>
     </div>
   );

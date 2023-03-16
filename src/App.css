@@ -1,4 +1,8 @@
-.App {
+.App{
+  
+}
+
+.App, .form {
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -8,8 +12,11 @@
 }
 
 .gpa{
-  color : grey;
-  width : 40vw;
+  color : black;
+  width : 120px;
+  height: auto;
+  padding : 2px;
+  border-radius: 5px;
 }
 
 .green-gpa{
