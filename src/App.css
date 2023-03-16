@@ -1,5 +1,5 @@
 .App{
-  
+
 }
 
 .App, .form {
@@ -20,17 +20,17 @@
 }
 
 .green-gpa{
-  background-color: green;
+  background-color: lightgreen;
 }
 
 .yellow-gpa{
-  background-color: yellow;
+  background-color: greenyellow;
 }
 
 .orange-gpa{
-  background-color: orange;
+  background-color: lightcoral;
 }
 
 .red-gpa{
-  background-color: red;
+  background-color: crimson;
 }

@@ -43,7 +43,7 @@ function App() {
     let weightedGPASum = 0.0;
     let totalCredits = 0;
     for(let i = 0; i < courses.length; i++){
-      weightedGPASum += (parseInt(courses[i].grade) * parseInt(courses[i].credits));
+      weightedGPASum += (parseFloat(courses[i].grade) * parseInt(courses[i].credits));
       totalCredits += parseInt(courses[i].credits);
     }
     //ensure not dividing by 0
@@ -51,7 +51,6 @@ function App() {
       setGPA(-1);
       return;
     }
-    console.log(weightedGPASum + "" + totalCredits);
     setGPA(weightedGPASum / totalCredits);
   }
 
@@ -82,7 +81,7 @@ function App() {
           "orange-gpa" : 
           "red-gpa")
         }>
-            {(GPA >= 0.0 && GPA <= 4.0) ? GPA.toFixed(2) : '-1.00'}
+            {(GPA >= 0.0 && GPA <= 4.0) ? (Math.round(GPA * 100) / 100).toFixed(2) : '-1.00'}
       </h1>
       </form>
     </div>
