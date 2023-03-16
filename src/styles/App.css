@@ -19,18 +19,26 @@
   border-radius: 5px;
 }
 
-.green-gpa{
+.great-gpa{
+  background-color: green;
+}
+
+.good-gpa{
   background-color: lightgreen;
 }
 
-.yellow-gpa{
+.solid-gpa{
   background-color: greenyellow;
 }
 
-.orange-gpa{
-  background-color: lightcoral;
+.average-gpa{
+  background-color: #FAD02C;
 }
 
-.red-gpa{
+.below-average-gpa{
+  background-color: orangered;
+}
+
+.bad-gpa{
   background-color: crimson;
 }

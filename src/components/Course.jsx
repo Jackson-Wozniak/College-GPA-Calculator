@@ -7,7 +7,7 @@ function Course(props){
                 placeholder="Credits" 
                 onChange={(e) => props.setCredits(props.courseIndex, e.target.value)}
             />
-            <select name="grade" id="" onChange={(e) => props.setGrade(props.courseIndex, e.target.value)} tabIndex="-1">
+            <select className="grade-select" id="" onChange={(e) => props.setGrade(props.courseIndex, e.target.value)} tabIndex="-1">
                 <option value="-">-</option>
                 <option value="4.0">A</option>
                 <option value="3.7">A-</option>

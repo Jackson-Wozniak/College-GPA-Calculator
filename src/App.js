@@ -1,4 +1,4 @@
-import './App.css';
+import './styles/App.css';
 import { useState } from 'react';
 import Course from './components/Course';
 
@@ -75,11 +75,19 @@ function App() {
       <input type="submit" value="Calculate"/>
       <h1 
         className={
-          "gpa " + (GPA > 3.0 ? 
-          "green-gpa" : GPA > 2.3 ? 
-          "yellow-gpa" : GPA >= 2.0 ? 
-          "orange-gpa" : 
-          "red-gpa")
+          "gpa " + 
+          //Great GPA is above 3.3
+          (GPA >= 3.5 ? "great-gpa" : 
+          //Good GPA is 3.0 - 3.5
+          GPA >= 3.0 ?  "good-gpa" :
+          //Solid GPA is 2.7 - 3.0
+          GPA >= 2.7 ? "solid-gpa" :
+          //Average GPA is 2.0 - 2.7
+          GPA >= 2.0 ? "average-gpa" :
+          //below average GPA is 1.7 - 2.0
+          GPA >= 1.7 ? "below-average-gpa" :
+          //Bad is anything below 1.7
+          "bad-gpa")
         }>
             {(GPA >= 0.0 && GPA <= 4.0) ? (Math.round(GPA * 100) / 100).toFixed(2) : '-1.00'}
       </h1>
