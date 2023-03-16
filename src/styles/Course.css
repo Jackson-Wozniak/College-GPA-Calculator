@@ -1,0 +1,29 @@
+.course{
+    margin : 10px;
+    
+}
+
+.credit-input{
+    border-radius: 5px;
+    height : 35px;
+    width : 160px;
+    margin : 10px;
+    border : none;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.credit-input::-webkit-outer-spin-button, .credit-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.grade-select{
+    border-radius: 5px;
+    height : 35px;
+    width : 55px;
+    margin : 10px;
+    border : none;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    font-family: 'Trebuchet MS', sans-serif;
+}

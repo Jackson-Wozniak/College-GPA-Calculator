@@ -40,6 +40,7 @@ function App() {
 
   function calculateGPA(e){
     e.preventDefault();
+    console.log(courses);
     let weightedGPASum = 0.0;
     let totalCredits = 0;
     for(let i = 0; i < courses.length; i++){
@@ -58,7 +59,7 @@ function App() {
     <div className="App">
       <div>
         <h3>{courses.length} Courses</h3>
-        <input type="submit" value="+ Add Course" onClick={() => addNewCourse()}/>
+        <input type="submit" value="+ Add Course" onClick={() => addNewCourse()} className="buttons"/>
       </div>
       <form className="form" onSubmit={(e) => calculateGPA(e)}>
       <div className="classes">
@@ -72,7 +73,7 @@ function App() {
           />
         ))}
       </div>
-      <input type="submit" value="Calculate"/>
+      <input type="submit" value="Calculate"className="buttons"/>
       <h1 
         className={
           "gpa " + 

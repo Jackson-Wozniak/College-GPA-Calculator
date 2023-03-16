@@ -9,14 +9,33 @@
   align-items: center;
   justify-content: center;
   text-align: center;
+  font-family: 'Trebuchet MS', sans-serif;
+}
+
+.buttons{
+  background-color: white;
+  border : none;
+  border-radius: 5px;
+  margin : 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  padding : 10px;
+  min-width: 150px;
+  font-family: 'Trebuchet MS', sans-serif;
+  font-size: 1.2rem;
 }
 
 .gpa{
   color : black;
-  width : 120px;
-  height: auto;
+  width : 180px;
+  height: 50px;
   padding : 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   border-radius: 5px;
+  font-family: 'Trebuchet MS', sans-serif;
+  font-size: 2.2rem;
 }
 
 .great-gpa{

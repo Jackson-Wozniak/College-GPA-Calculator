@@ -1,8 +1,10 @@
+import '../styles/Course.css';
+
 function Course(props){
     return ( 
-        <div>
+        <div className="course">
             <input 
-                className={props.courseError ? "error" : ""}
+                className="credit-input"
                 type="number" 
                 placeholder="Credits" 
                 onChange={(e) => props.setCredits(props.courseIndex, e.target.value)}
